@@ -97,6 +97,10 @@ button[disabled] {
   float: right;
 }
 
+#slide-length::after {
+  content: " Characters";
+}
+
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
