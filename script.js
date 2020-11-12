@@ -7,15 +7,10 @@ const alphaLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", 
 const specialChars = [" ", "!", "#", "$", "%", "&", "\'", "\\", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"]
 
 
-//logic functions
 function generatePassword(passwordLength) {
   let passwordArray = []
   let selectionArray = []
-  // local copy of the items to not affect the global variables. Likely change this later. 
-  // let num = numeric
-  // let alphaU = alphaUpper
-  // let special = specialChars
-  // let passwordLength = passwordLength
+
 
   //checkbox status
   let numericBool = document.getElementById("numbers").checked
@@ -23,39 +18,31 @@ function generatePassword(passwordLength) {
   let lowerBool = document.getElementById("lower").checked
   let symobolicBool = document.getElementById("symbols").checked
 
-  if(numericBool == true) {
+
+  // concat arrays
+  if (numericBool == true) {
     selectionArray = selectionArray.concat(numeric)
   }
-  if(upperBool == true) {
+  if (upperBool == true) {
     selectionArray = selectionArray.concat(alphaUpper)
   }
-  if(lowerBool == true) {
+  if (lowerBool == true) {
     selectionArray = selectionArray.concat(alphaLower)
   }
-  if(symobolicBool == true) {
+  if (symobolicBool == true) {
     selectionArray = selectionArray.concat(specialChars)
   }
 
-  if(numericBool == false && upperBool == false && lowerBool == false && symobolicBool == false){
-    return("Please Select an option(s) below to generate a password")  
+  if (numericBool == false && upperBool == false && lowerBool == false && symobolicBool == false) {
+    return ("Please Select an option(s) below to generate a password")
   }
-
-  // if (alphabeticBool == true) {
-
-  //   num = num.concat(alphaU)
-  // }
-  // if (symoblicBool == true) {
-
-  //   num = num.concat(special)
-  // }  
 
   for (i = 0; i < passwordLength; i++) {
     let randomItem = selectionArray[Math.floor(Math.random() * selectionArray.length)];
     passwordArray.push(randomItem)
 
   }
-
-
+  //make array a string
   let password = passwordArray.join("")
   return password
 
@@ -70,9 +57,6 @@ rangeValue.oninput = function () {
   document.getElementById("slide-length").innerHTML = slideVal
 
 }
-
-
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
