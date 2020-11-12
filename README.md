@@ -19,4 +19,4 @@ WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page  
 
 ## Screenshots
-![Alt text](Screenshots\PG-Screenshot.png "Example Screenshot of Password Generator")
+![Alt text](https://github.com/mhowe21/Password-Generator/blob/master/Screenshots/PG-Screenshot.png "Example Screenshot of Password Generator")
